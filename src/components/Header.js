@@ -3,8 +3,6 @@ import NavigationBar from "./NavigationBar";
 import Image from "next/image";
 
 const Header = ({ heroOn = false, global }) => {
-  console.log(global);
-
   return (
     <>
       {heroOn && (
