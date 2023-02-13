@@ -1,0 +1,36 @@
+.hero-section {
+  background: $ml-blue;
+  .hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .hero-grabber {
+        h1 {
+          color: $ml-white;
+          font-weight: bold;
+          font-size: 4.5rem;
+        }
+      }
+      .hero-text {
+        p {
+          color: $ml-white;
+        }
+      }
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: flex-end;
+      img {
+        border-top-left-radius: 40px 40px;
+        border-top: 4px solid white;
+        border-left: 4px solid white;
+      }
+    }
+  }
+}

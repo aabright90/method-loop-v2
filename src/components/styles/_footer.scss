@@ -1,0 +1,49 @@
+.ml-footer {
+  background: $ml-black;
+  color: $ml-white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+  .footer-grid {
+    h3 {
+      font-weight: bold;
+    }
+    .grid-text {
+      font-size: 12px;
+    }
+    .social-list {
+      display: inline-flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 1rem;
+      li {
+        margin: 0 8px 0 8px;
+        svg {
+          color: white;
+        }
+      }
+    }
+
+    .copyright-text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.39);
+    }
+  }
+
+  .list-header {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .grid-list {
+    list-style: none;
+    padding: 0;
+    .grid-item {
+      margin-top: 0.75rem;
+      font-size: 14px;
+    }
+  }
+}

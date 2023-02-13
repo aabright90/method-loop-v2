@@ -1,0 +1,19 @@
+@import "./variables";
+@import "../../components/styles/spacer";
+@import "../../components/styles/header";
+@import "../../components/styles/navbar";
+@import "../../components/styles/footer";
+@import "../../components/styles/buttons";
+@import "../../components/styles/home";
+@import "../../components/styles/mobile";
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+#__next {
+  max-width: 100%;
+  overflow-x: hidden;
+}

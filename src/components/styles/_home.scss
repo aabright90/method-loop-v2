@@ -1,0 +1,210 @@
+.section-trusted-orgs {
+  .org-top {
+    text-align: center;
+    padding: 2rem;
+  }
+  .org-bottom {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 1rem;
+    .org-brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.section-master-accelerate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 4rem;
+  padding: 2.5rem;
+  .text-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .text-top {
+      margin-bottom: 2rem;
+      h2 {
+        font-size: 3rem;
+      }
+      strong {
+        color: $text-blue;
+      }
+    }
+
+    .text-bottom {
+      font-size: 1rem;
+    }
+  }
+
+  .vector-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.section-steps {
+  .text-header {
+    padding: 5%;
+    padding-bottom: 1%;
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .step-box-wrapper {
+    width: 100%;
+  }
+
+  .step-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 5%;
+    gap: 10%;
+    .step-card,
+    .step-ill,
+    .step-heading,
+    .step-text {
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0px 6px 10px rgba(73, 79, 220, 0.15);
+      border-radius: 20px;
+      width: 260px;
+      height: 220px;
+      position: relative;
+      .step-ill {
+        img {
+          position: absolute;
+          right: 20%;
+          top: -20%;
+        }
+      }
+      .step-heading {
+        margin-top: 3rem;
+        span {
+          padding: 4px;
+        }
+      }
+      .step-text {
+        margin-top: 1rem;
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .border-blue {
+      border: 1px solid $text-blue;
+    }
+  }
+}
+
+.section-elevate,
+.section-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .elevate-action,
+  .workspace-action {
+    padding: 8%;
+    .heading {
+      h1 {
+        font-size: 60px;
+        font-weight: bold;
+      }
+    }
+
+    .subheading {
+      border-left: 3px solid $text-blue;
+      p {
+        color: $text-blue;
+        padding-left: 10px;
+      }
+    }
+
+    .text {
+    }
+  }
+
+  .elevate-ill {
+  }
+}
+
+.section-workspace {
+  .workspace-action {
+    padding-top: 15%;
+  }
+
+  .subheading,
+  .text,
+  button {
+    margin-top: 4%;
+  }
+}
+
+.section-testimonials {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .hero {
+    text-align: center;
+    h1 {
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    .text {
+      margin: 2rem;
+      font-size: 18px;
+    }
+  }
+
+  .testimonials-ill {
+    margin-top: 2rem;
+  }
+}
+
+.section-sign-up {
+  margin-top: 10rem;
+  text-align: center;
+  position: relative;
+  .hero {
+    margin-bottom: 8rem;
+    .header {
+      h1 {
+        font-size: 80px;
+        font-weight: 700;
+        strong {
+          color: $text-blue;
+        }
+      }
+    }
+    .text {
+    }
+    .action {
+      display: flex;
+      justify-content: center;
+    }
+
+    .text,
+    .action {
+      margin-top: 2rem;
+    }
+  }
+
+  .sign-up-ills {
+    img {
+      width: 100%;
+      margin-bottom: -25px;
+    }
+  }
+}

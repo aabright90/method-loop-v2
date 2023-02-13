@@ -1,0 +1,60 @@
+a {
+  text-decoration: none;
+}
+
+.login {
+  .button-icon {
+    margin-left: 8px;
+  }
+
+  .button-text {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+#login,
+#action-call,
+#free-trial {
+  width: 100px;
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#free-trial {
+    width: 130px;
+    margin-left: 4px;
+    color: $ml-blue1;
+    background-color: $ml-white;
+}
+
+#action-call {
+  background: #336CDB;
+    width: 10rem;
+    padding: 8px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    p {
+      margin: 0;
+    }
+}
+
+.more-info {
+  background: #EFF4FC !important;
+  color: #336CDB !important;
+  width: 85px !important;
+}
