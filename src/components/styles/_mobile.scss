@@ -1,3 +1,247 @@
+@media (max-width: 1180px) {
+  .navbar-main {
+    .bg-light {
+      grid-template-columns: 1fr;
+      .navbar-brand {
+        font-weight: bold;
+        margin-left: 1%;
+        font-size: 24px;
+      }
+    }
+
+    .left-nav {
+      padding-right: 1rem;
+      position: relative;
+      right: 1.5%;
+      .nav-button {
+        margin-top: -15px;
+        position: absolute;
+        top: 46%;
+        right: 0;
+        button {
+        }
+      }
+    }
+  }
+
+  .hero-section {
+    height: 50vh;
+    .hero-wrapper {
+      .hero-left {
+        .hero-left-wrapper {
+          min-width: 400px;
+          max-height: 350px;
+          position: absolute;
+          top: 30%;
+          left: 2%;
+          .hero-grabber {
+            h1 {
+              font-size: 3rem;
+            }
+          }
+          .hero-text {
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .hero-right {
+        position: relative;
+        img {
+          position: absolute;
+          top: 25%;
+          right: 5%;
+          width: 0;
+          height: 0;
+          min-width: 400px;
+          min-height: 350px;
+        }
+      }
+    }
+  }
+
+  .section-trusted-orgs {
+    .org-bottom {
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 2rem;
+      gap: 3rem;
+    }
+  }
+
+  .section-master-accelerate {
+    margin: 2rem;
+    margin-top: 100px;
+    .text-box {
+      .text-top {
+        h2 {
+          font-size: 26px;
+        }
+      }
+
+      .text-bottom {
+        font-size: 14px;
+      }
+
+      .text-bottom {
+        p:nth-child(2) {
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .vector-box {
+      position: relative;
+      img {
+        position: absolute;
+        top: -30%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .section-steps {
+    margin-top: 100px;
+    .text-header {
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .section-elevate {
+    .elevate-action {
+      width: 50vw;
+
+      .heading {
+        h1 {
+          font-size: 40px;
+        }
+      }
+
+      .subheading {
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .text {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .elevate-ill {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50vw;
+      img {
+        margin-top: -15%;
+        width: 45vw;
+      }
+    }
+  }
+
+  .section-workspace {
+    margin-top: -30%;
+    .workspace-ill {
+      width: 50vw;
+      img {
+        width: 100%;
+      }
+    }
+
+    .workspace-action {
+      margin-top: 45%;
+      width: 50vw;
+      .heading {
+        margin-bottom: -3%;
+        h1 {
+          font-size: 30px;
+        }
+      }
+
+      .subheading {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .text {
+        p {
+          font-size: 14px;
+        }
+      }
+
+      #action-call {
+        margin-top: 1px;
+      }
+    }
+  }
+
+  .section-testimonials {
+        margin-top: -15%;
+    .hero {
+      h1 {
+        font-size: 40px;
+      }
+      .heading {
+        img {
+        }
+      }
+
+      .text {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .slick-slide:first-child {
+      margin-right: -50px;
+    }
+
+    .slick-slide:last-child {
+      margin-left: -50px;
+    }
+  }
+
+  .section-sign-up {
+    margin-top: 120px;
+    .hero {
+      .header {
+        h1 {
+          font-size: 40px;
+        }
+      }
+
+      .text {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .sign-up-ills {
+      img {
+        height: 8rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .ml-footer {
+    column-gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   // navbar
 
@@ -141,7 +385,7 @@
   // elevate
 
   .section-elevate {
-    margin-top: 5rem;
+    margin-top: 10%;
     grid-template-columns: none;
 
     .elevate-action {
@@ -318,6 +562,4 @@
       }
     }
   }
-
-  
 }

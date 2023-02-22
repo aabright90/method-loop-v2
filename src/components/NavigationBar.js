@@ -80,9 +80,15 @@ const NavigationBar = ({ global }) => {
             </Link>
           </div>
           <Nav className="align-self-end linkbox">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Methods</Nav.Link>
-            <Nav.Link href="#pricing">Workspace</Nav.Link>
+            <Nav.Link id="#home" href="#home">
+              Home
+            </Nav.Link>
+            <Nav.Link id="#methods" href="#methods">
+              Methods
+            </Nav.Link>
+            <Nav.Link id="#workspace" href="#workspace">
+              Workspace
+            </Nav.Link>
             <LoginButton id={"login"} route={"/login"} />
             <TrialButton
               id={"free-trial"}

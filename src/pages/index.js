@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import Image from "next/image";
 
-
 import { ActionCallArrowRight, ActionCall } from "../components/buttons";
+import Slider from "react-slick";
 
 import ebayIcon from "@/assets/icons/ebay.svg";
 import appleIcon from "@/assets/icons/apple.svg";
@@ -28,18 +28,22 @@ import workspace from "@/assets/vectors/illustrations/workspace.svg";
 import testimonials from "@/assets/icons/testimonials.svg";
 import testimonialsIll from "@/assets/vectors/illustrations/testimonials.svg";
 
-import facesDesktop from '@/assets/vectors/avatars/facesDesktop.svg';
-import facesMobile from '@/assets/vectors/avatars/facesMobile.svg'
+import test1 from "@/assets/vectors/illustrations/test1.svg";
+import test2 from "@/assets/vectors/illustrations/test2.svg";
+import test3 from "@/assets/vectors/illustrations/test3.svg";
+import test4 from "@/assets/vectors/illustrations/test4.svg";
+import test5 from "@/assets/vectors/illustrations/test5.svg";
 
+import facesDesktop from "@/assets/vectors/avatars/facesDesktop.svg";
+import facesMobile from "@/assets/vectors/avatars/facesMobile.svg";
 
 export default function Home() {
-
   const [deskTopView, setDesktopView] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
   useEffect(() => {
     const viewport = window.screen.width;
-    if (viewport < 769) {
+    if (viewport <= 1180) {
       setMobileView(true);
     } else {
       setDesktopView(true);
@@ -51,6 +55,21 @@ export default function Home() {
     setDesktopView,
     mobileView,
     setMobileView,
+  };
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
+  const settings2 = {
+    className: "testimonials",
+    dots: true,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
   };
 
   return (
@@ -68,22 +87,22 @@ export default function Home() {
           </div>
           <div className="org-bottom">
             <div className="org-brand">
-              <Image src={ebayIcon} height="75" width="75" alt="ebay" />
+              <Image src={ebayIcon} height="38" width="185.75" alt="ebay" />
             </div>
             <div className="org-brand">
-              <Image src={appleIcon} height="50" width="50" alt="apple" />
+              <Image src={appleIcon} height="50" width="41" alt="apple" />
             </div>
             <div className="org-brand">
-              <Image src={googleIcon} height="75" width="75" alt="google" />
+              <Image src={googleIcon} height="38" width="152" alt="google" />
             </div>
             <div className="org-brand">
-              <Image src={ibmIcon} height="75" width="75" alt="ibm" />
+              <Image src={ibmIcon} height="30" width="75" alt="ibm" />
             </div>
             <div className="org-brand">
-              <Image src={evositeIcon} height="75" width="75" alt="evosite" />
+              <Image src={evositeIcon} height="50" width="138" alt="evosite" />
             </div>
             <div className="org-brand">
-              <Image src={aconexIcon} height="75" width="75" alt="aconex" />
+              <Image src={aconexIcon} height="25" width="136" alt="aconex" />
             </div>
           </div>
         </section>
@@ -110,7 +129,7 @@ export default function Home() {
             </div>
           </div>
           <div className="vector-box">
-            <Image src={brainstorm} height="400" width="400" alt="brainstorm" />
+            <Image src={brainstorm} height="405" width="430" alt="brainstorm" />
           </div>
         </section>
         <section className="section-steps">
@@ -122,7 +141,7 @@ export default function Home() {
             </p>
           </div>
           <div className="step-box-wrapper">
-            <div className="step-box">
+            <Slider {...settings}>
               <div className="step-card">
                 <div className="step-ill">
                   <Image src={learn} height="120" width="120" alt="learn" />
@@ -201,7 +220,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Slider>
           </div>
         </section>
         <section className="section-elevate">
@@ -233,12 +252,12 @@ export default function Home() {
             </div>
           </div>
           <div className="elevate-ill">
-            <Image src={elevate} height="500" width="500" alt="elevate" />
+            <Image src={elevate} height="600" width="740" alt="elevate" />
           </div>
         </section>
         <section className="section-workspace">
           <div className="workspace-ill">
-            <Image src={workspace} height="800" width="600" alt="workspace" />
+            <Image src={workspace} height="900" width="700" alt="workspace" />
           </div>
           <div className="workspace-action">
             <div className="heading">
@@ -267,7 +286,7 @@ export default function Home() {
         <section className="section-testimonials">
           <div className="hero">
             <div className="heading">
-              <Image src={testimonials} height="100" width="100" alt="find" />
+              <Image src={testimonials} height="24" width="111" alt="find" />
               <br />
               <h1>
                 What world-class <br /> designers have to say
@@ -282,14 +301,23 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="testimonials-ill">
-            <Image
-              src={testimonialsIll}
-              height="340"
-              width="1685"
-              alt="testimonials"
-            />
-          </div>
+          <Slider {...settings2}>
+            <div className="testimonial">
+              <Image src={test1} height="305" width="340" alt="testimonial" />
+            </div>
+            <div className="testimonial">
+              <Image src={test2} height="305" width="340" alt="testimonial" />
+            </div>
+            <div className="testimonial">
+              <Image src={test3} height="305" width="340" alt="testimonial" />
+            </div>
+            <div className="testimonial">
+              <Image src={test4} height="305" width="340" alt="testimonial" />
+            </div>
+            <div className="testimonial">
+              <Image src={test5} height="305" width="340" alt="testimonial" />
+            </div>
+          </Slider>
         </section>
         <section className="section-sign-up">
           <div className="hero">

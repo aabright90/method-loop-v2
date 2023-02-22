@@ -56,24 +56,6 @@ const Footer = () => {
           <li className="grid-item">Design Compass®</li>
         </ul>
       </div>
-      <div className="footer-grid">
-        <h4 className="list-header">Discover our app</h4>
-        <div className="store-name">
-          <Image
-            src={googlePlayIcon}
-            height="50"
-            width="100"
-            alt="google-play"
-          />
-
-          <Image
-            src={appleStoreIcon}
-            height="50"
-            width="100"
-            alt="apple-store"
-          />
-        </div>
-      </div>
     </footer>
   );
 };

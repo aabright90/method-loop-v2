@@ -4,11 +4,11 @@ a {
 
 .login {
   .button-icon {
-    margin-left: 8px;
+    margin-left: 12px;
   }
 
   .button-text {
-    margin-right: 8px;
+    margin-right: 12px;
   }
 
   &:hover {
@@ -19,12 +19,14 @@ a {
 #login,
 #action-call,
 #free-trial {
-  width: 100px;
-  border-radius: 20px;
+  width: 115px;
+  height: 48px;
+  border-radius: 25px;
   border: 1px solid white;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -32,29 +34,31 @@ a {
 }
 
 #free-trial {
-    width: 130px;
-    margin-left: 4px;
-    color: $ml-blue1;
-    background-color: $ml-white;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  margin-left: 4px;
+  color: $ml-blue1;
+  background-color: $ml-white;
 }
 
 #action-call {
-  background: #336CDB;
-    width: 10rem;
-    padding: 8px;
-    font-size: 13px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    p {
-      margin: 0;
-    }
+  background: #336cdb;
+  width: 10rem;
+  padding: 8px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  p {
+    margin: 0;
+  }
 }
 
 .more-info {
-  background: #EFF4FC !important;
-  color: #336CDB !important;
+  background: #eff4fc !important;
+  color: #336cdb !important;
   width: 85px !important;
 }

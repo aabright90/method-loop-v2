@@ -2,6 +2,9 @@ import React from "react";
 import NavigationBar from "./NavigationBar";
 import Image from "next/image";
 
+import group from "../assets/img/group.png";
+import groupMobile from "../assets/img/meetingMobile.png";
+
 const Header = ({ heroOn = false, global }) => {
   return (
     <>
@@ -28,22 +31,8 @@ const Header = ({ heroOn = false, global }) => {
                 </div>
               </div>
               <div className="hero-right">
-                {global.deskTopView && (
-                  <Image
-                    src={"/img/group.png"}
-                    alt="image"
-                    width="600"
-                    height="450"
-                  />
-                )}
-                {global.mobileView && (
-                  <Image
-                    src={"/img/meetingMobile.png"}
-                    alt="image"
-                    width="600"
-                    height="450"
-                  />
-                )}
+                {global.deskTopView && <Image src={group} alt="image" />}
+                {global.mobileView && <Image src={groupMobile} alt="image" />}
               </div>
             </div>
           </section>

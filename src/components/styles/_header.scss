@@ -1,24 +1,39 @@
 .hero-section {
   background: $ml-blue;
+  position: relative;
+  height: 90vh;
   .hero-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 1rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
     .hero-left {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-top: 10%;
+      .hero-left-wrapper {
+        min-width: 600px;
+        max-height: 500px;
+      }
       .hero-grabber {
         h1 {
           color: $ml-white;
-          font-weight: bold;
-          font-size: 4.5rem;
+          font-weight: 700;
+          font-size: 80px;
         }
       }
       .hero-text {
+        margin-top: 24px;
         p {
           color: $ml-white;
+          font-size: 20px;
+          font-weight: 400;
         }
       }
     }
@@ -26,10 +41,14 @@
     .hero-right {
       display: flex;
       justify-content: flex-end;
+      position: relative;
       img {
-        border-top-left-radius: 40px 40px;
-        border-top: 4px solid white;
-        border-left: 4px solid white;
+        width: 45vw;
+        height: 70vh;
+        position: absolute;
+        bottom: 0;
+        min-width: 600px;
+        min-height: 500px;
       }
     }
   }

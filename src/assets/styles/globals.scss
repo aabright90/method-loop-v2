@@ -5,9 +5,10 @@
 @import "../../components/styles/footer";
 @import "../../components/styles/buttons";
 @import "../../components/styles/home";
-@import "../../components/styles/mobile";
 
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import "../../components/styles/mobile";
+
 
 body {
   font-family: "DM Sans", sans-serif !important;
@@ -17,3 +18,6 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+
+
