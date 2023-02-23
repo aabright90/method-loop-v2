@@ -16,12 +16,29 @@
   .org-bottom {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    padding: 1rem;
+    width: 100vw;
     .org-brand {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
+    // #google {
+    //   position: relative;
+    // }
+
+    // #google,
+    // #apple {
+    //   width: 75px;
+    // }
+
+    // #apple {
+    //   position: relative;
+    //   img {
+    //     position: absolute;
+    //     top: -7px;
+    //   }
+    // }
   }
 }
 

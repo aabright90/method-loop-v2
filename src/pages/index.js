@@ -28,6 +28,8 @@ import workspace from "@/assets/vectors/illustrations/workspace.svg";
 import testimonials from "@/assets/icons/testimonials.svg";
 import testimonialsIll from "@/assets/vectors/illustrations/testimonials.svg";
 
+import Marquee from "react-fast-marquee";
+
 import test1 from "@/assets/vectors/illustrations/test1.svg";
 import test2 from "@/assets/vectors/illustrations/test2.svg";
 import test3 from "@/assets/vectors/illustrations/test3.svg";
@@ -60,15 +62,15 @@ export default function Home() {
   const settings = {
     dots: true,
     infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: deskTopView ? 4 : 3,
+    slidesToScroll: deskTopView ? 0 : 1,
   };
 
   const settings2 = {
     className: "testimonials",
     dots: true,
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: deskTopView ? 5 : 3,
     slidesToScroll: 1,
   };
 
@@ -85,26 +87,28 @@ export default function Home() {
           <div className="org-top">
             <p>Trusted by different organizations worldwide</p>
           </div>
-          <div className="org-bottom">
-            <div className="org-brand">
-              <Image src={ebayIcon} height="38" width="185.75" alt="ebay" />
+          <Marquee>
+            <div className="org-bottom">
+              <div className="org-brand">
+                <Image src={ebayIcon} height="38" width="185.75" alt="ebay" />
+              </div>
+              <div className="org-brand" id="apple">
+                <Image src={appleIcon} height="50" width="41" alt="apple" />
+              </div>
+              <div className="org-brand" id="google">
+                <Image src={googleIcon} height="38" width="152" alt="google" />
+              </div>
+              <div className="org-brand">
+                <Image src={ibmIcon} height="30" width="75" alt="ibm" />
+              </div>
+              <div className="org-brand">
+                <Image src={evositeIcon} height="50" width="138" alt="evosite"/>
+              </div>
+              <div className="org-brand">
+                <Image src={aconexIcon} height="25" width="136" alt="aconex" />
+              </div>
             </div>
-            <div className="org-brand">
-              <Image src={appleIcon} height="50" width="41" alt="apple" />
-            </div>
-            <div className="org-brand">
-              <Image src={googleIcon} height="38" width="152" alt="google" />
-            </div>
-            <div className="org-brand">
-              <Image src={ibmIcon} height="30" width="75" alt="ibm" />
-            </div>
-            <div className="org-brand">
-              <Image src={evositeIcon} height="50" width="138" alt="evosite" />
-            </div>
-            <div className="org-brand">
-              <Image src={aconexIcon} height="25" width="136" alt="aconex" />
-            </div>
-          </div>
+          </Marquee>
         </section>
         <section className="section-master-accelerate">
           <div className="text-box">
