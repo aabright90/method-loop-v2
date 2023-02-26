@@ -2,12 +2,25 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children, global }) => {
+import NavigationBar from "./NavigationBar";
+
+import { Container } from "@mui/material";
+
+const Layout = ({ children }) => {
   return (
     <>
-      <Header global={global} heroOn={true} />
-      <div className="app-container">{children}</div>
-      <Footer />
+      <div className="banner-bg"></div>
+      <Container
+        maxWidth="xl"
+        disableGutters
+        sx={{
+          position: "relative",
+          margin: "auto",
+        }}
+      >
+        <div className="app-container">{children}</div>
+        <Footer />
+      </Container>
     </>
   );
 };

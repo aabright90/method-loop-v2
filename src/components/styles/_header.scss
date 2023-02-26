@@ -1,55 +1,61 @@
-.hero-section {
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 700px;
   background: $ml-blue;
-  position: relative;
-  height: 90vh;
-  .hero-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 1rem;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10%;
-      .hero-left-wrapper {
-        min-width: 600px;
-        max-height: 500px;
-      }
-      .hero-grabber {
-        h1 {
-          color: $ml-white;
-          font-weight: 700;
-          font-size: 80px;
-        }
-      }
-      .hero-text {
-        margin-top: 24px;
-        p {
-          color: $ml-white;
-          font-size: 20px;
-          font-weight: 400;
-        }
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 9fr;
+  height: 80vw;
+  max-height: 700px;
+
+  .navbar-main {
+    grid-column: 1 / 3;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    grid-column: 1 / 2;
+    .hero-left-wrapper {
+      max-width: 100%;
+      max-height: 85%;
+    }
+    .hero-grabber {
+      h1 {
+        color: $ml-white;
+        font-weight: 700;
+        font-size: 80px;
       }
     }
-
-    .hero-right {
-      display: flex;
-      justify-content: flex-end;
-      position: relative;
-      img {
-        width: 45vw;
-        height: 70vh;
-        position: absolute;
-        bottom: 0;
-        min-width: 600px;
-        min-height: 500px;
+    .hero-text {
+      margin-top: 24px;
+      p {
+        color: $ml-white;
+        font-size: 20px;
+        font-weight: 400;
       }
+    }
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    grid-column: 2 / 3;
+    img {
+      object-fit: cover;
+      max-width: 662px;
+      height: auto;
     }
   }
 }

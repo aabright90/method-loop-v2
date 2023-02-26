@@ -123,7 +123,7 @@
       text-align: center;
       box-shadow: 0px 6px 10px rgba(73, 79, 220, 0.15);
       border-radius: 20px;
-      width: 260px !important;
+      max-width: 260px !important;
       height: 220px;
       position: relative;
       .step-ill {
@@ -167,8 +167,7 @@
   grid-template-columns: 1fr 1fr;
   .elevate-action,
   .workspace-action {
-    padding: 8%;
-    padding-top: 10%;
+    max-height: 606px;
     .heading {
       h1 {
         font-family: "DM Sans";
@@ -240,8 +239,17 @@
 }
 
 .section-workspace {
+}
+
+.section-workspace {
+  .workspace-ill {
+    img {
+      max-height: 634px;
+    }
+  }
+
   .workspace-action {
-    padding-top: 15%;
+    margin-left: 12%;
   }
 
   .subheading,
@@ -352,7 +360,7 @@
   .sign-up-ills {
     img {
       width: 100%;
-      margin-bottom: -25px;
+      height: auto;
     }
   }
 }

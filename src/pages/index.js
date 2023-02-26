@@ -4,7 +4,11 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 
 import { ActionCallArrowRight, ActionCall } from "../components/buttons";
+import { Box, Container } from "@mui/material";
+
 import Slider from "react-slick";
+
+import Header from "@/components/Header";
 
 import ebayIcon from "@/assets/icons/ebay.svg";
 import appleIcon from "@/assets/icons/apple.svg";
@@ -42,15 +46,25 @@ import facesMobile from "@/assets/vectors/avatars/facesMobile.svg";
 export default function Home() {
   const [deskTopView, setDesktopView] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(false);
 
   useEffect(() => {
     const viewport = window.screen.width;
     if (viewport <= 1180) {
       setMobileView(true);
+      setDesktopView;
+      false;
+      setSmallScreen(false);
+    } else if (viewport <= 767) {
+      setMobileView(true);
+      setDesktopView(false);
+      setSmallScreen(true);
     } else {
       setDesktopView(true);
+      setMobileView(false);
+      setSmallScreen(false);
     }
-  }, [setDesktopView, setMobileView]);
+  }, []);
 
   const global = {
     deskTopView,
@@ -60,18 +74,66 @@ export default function Home() {
   };
 
   const settings = {
+    className: "steps",
     dots: true,
     infinite: false,
-    slidesToShow: deskTopView ? 4 : 3,
-    slidesToScroll: deskTopView ? 0 : 1,
+    slidesToShow: 4,
+    slidesToScroll: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          rows: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 5,
+          rows: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1,
+          dots: true,
+        },
+      },
+    ],
   };
 
   const settings2 = {
     className: "testimonials",
     dots: true,
     infinite: false,
-    slidesToShow: deskTopView ? 5 : 3,
-    slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 5,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+    ],
   };
 
   return (
@@ -83,6 +145,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout global={global}>
+        <Header />
         <section className="section-trusted-orgs">
           <div className="org-top">
             <p>Trusted by different organizations worldwide</p>
@@ -102,7 +165,12 @@ export default function Home() {
                 <Image src={ibmIcon} height="30" width="75" alt="ibm" />
               </div>
               <div className="org-brand">
-                <Image src={evositeIcon} height="50" width="138" alt="evosite"/>
+                <Image
+                  src={evositeIcon}
+                  height="50"
+                  width="138"
+                  alt="evosite"
+                />
               </div>
               <div className="org-brand">
                 <Image src={aconexIcon} height="25" width="136" alt="aconex" />
@@ -133,7 +201,7 @@ export default function Home() {
             </div>
           </div>
           <div className="vector-box">
-            <Image src={brainstorm} height="405" width="430" alt="brainstorm" />
+            <Image src={brainstorm} alt="brainstorm" />
           </div>
         </section>
         <section className="section-steps">
@@ -146,7 +214,7 @@ export default function Home() {
           </div>
           <div className="step-box-wrapper">
             <Slider {...settings}>
-              <div className="step-card">
+              <div id="step-card" className="step-card">
                 <div className="step-ill">
                   <Image src={learn} height="120" width="120" alt="learn" />
                 </div>
@@ -164,7 +232,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="step-card border-blue">
+              <div id="step-card" className="step-card border-blue">
                 <div className="step-ill">
                   <Image src={define} height="120" width="120" alt="define" />
                 </div>
@@ -183,7 +251,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="step-card">
+              <div id="step-card" className="step-card">
                 <div className="step-ill">
                   <Image
                     src={establish}
@@ -206,7 +274,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="step-card border-blue">
+              <div id="step-card" className="step-card border-blue">
                 <div className="step-ill">
                   <Image src={deliver} height="120" width="120" alt="deliver" />
                 </div>
@@ -230,7 +298,7 @@ export default function Home() {
         <section className="section-elevate">
           <div className="elevate-action">
             <div className="heading">
-              <Image src={find} height="50" width="50" alt="find" />
+              <Image src={find} alt="find" />
               <br />
               <h1>
                 Elevate your <br /> design knowledge
@@ -264,27 +332,29 @@ export default function Home() {
             <Image src={workspace} height="900" width="700" alt="workspace" />
           </div>
           <div className="workspace-action">
-            <div className="heading">
-              <Image src={automate} height="75" width="75" alt="find" />
-              <br />
-              <h1>
-                Your workspace. <br /> Simple and <br /> streamlined
-              </h1>
+            <div className="action-wrapper">
+              <div className="heading">
+                <Image src={automate} height="75" width="75" alt="find" />
+                <br />
+                <h1>
+                  Your workspace. <br /> Simple and <br /> streamlined
+                </h1>
+              </div>
+              <div className="subheading">
+                <p>
+                  Share all your favourite resources. <br />
+                  Easy, seamless, secure.
+                </p>
+              </div>
+              <div className="text">
+                <p>
+                  Make collections of your favourite methods and <br />
+                  templates and share them with your team, <br />
+                  all from the one place.
+                </p>
+              </div>
+              <ActionCall text={"Start Free Trial"} route={"/free-trial"} />
             </div>
-            <div className="subheading">
-              <p>
-                Share all your favourite resources. <br />
-                Easy, seamless, secure.
-              </p>
-            </div>
-            <div className="text">
-              <p>
-                Make collections of your favourite methods and <br />
-                templates and share them with your team, <br />
-                all from the one place.
-              </p>
-            </div>
-            <ActionCall text={"Start Free Trial"} route={"/free-trial"} />
           </div>
         </section>
         <section className="section-testimonials">

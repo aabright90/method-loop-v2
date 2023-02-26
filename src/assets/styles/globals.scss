@@ -10,13 +10,19 @@
 @import "../../components/styles/mobile";
 
 
-body {
+body, a {
   font-family: "DM Sans", sans-serif !important;
+}
+
+a {
+  cursor: pointer !important;
+  color: white !important;
 }
 
 #__next {
   max-width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 
