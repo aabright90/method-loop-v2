@@ -49,13 +49,16 @@
   .hero-right {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    position: relative;
     right: 0;
     grid-column: 2 / 3;
     img {
       object-fit: cover;
       max-width: 662px;
       height: auto;
+      bottom: 0;
+      position: absolute;
+      right: 0;
     }
   }
 }

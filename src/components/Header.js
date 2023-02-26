@@ -26,7 +26,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="hero-right" style={{ position: 'relative' }}>
+      <div className="hero-right">
         <Box
           sx={{
             width: "100%",
