@@ -6,10 +6,10 @@ import { Box, Container } from "@mui/material";
 import group from "../assets/img/group.png";
 import groupMobile from "../assets/img/meetingMobile.png";
 
-const Header = () => {
+const Header = ({ global }) => {
   return (
     <section className="header-grid">
-      <NavigationBar />
+      <NavigationBar global={global} />
       <div className="hero-left">
         <div className="hero-left-wrapper">
           <div className="hero-grabber">

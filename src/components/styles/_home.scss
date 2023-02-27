@@ -292,9 +292,10 @@
 
   .testimonials {
     margin-top: 2rem;
-    // .slick-slide.slick-active {
-    //   margin-right: 1rem;
-    // }
+    .testimonial {
+      max-width: 305px
+    }
+    
   }
 }
 

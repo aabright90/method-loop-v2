@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import Image from "next/image";
+import Link from "next/link";
 
-import { ActionCallArrowRight, ActionCall } from "../components/buttons";
-import { Box, Container } from "@mui/material";
+import {
+  ActionCallArrowRight,
+  ActionCall,
+  TrialButton,
+} from "../components/buttons";
+import { List, ListItem, MenuItem } from "@mui/material";
 
 import Slider from "react-slick";
+import Drawer from "react-modern-drawer";
 
 import Header from "@/components/Header";
 
@@ -48,6 +54,12 @@ export default function Home() {
   const [mobileView, setMobileView] = useState(false);
   const [smallScreen, setSmallScreen] = useState(false);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   useEffect(() => {
     const viewport = window.screen.width;
     if (viewport <= 1180) {
@@ -71,6 +83,8 @@ export default function Home() {
     setDesktopView,
     mobileView,
     setMobileView,
+    toggleDrawer,
+    isOpen,
   };
 
   const settings = {
@@ -114,21 +128,21 @@ export default function Home() {
     className: "testimonials",
     dots: true,
     infinite: false,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 0,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 5,
-          dots: true,
-        },
-      },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 3,
           slidesToScroll: 1,
           dots: true,
         },
@@ -145,7 +159,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout global={global}>
-        <Header />
+        <Header global={global} />
         <section className="section-trusted-orgs">
           <div className="org-top">
             <p>Trusted by different organizations worldwide</p>
@@ -376,21 +390,21 @@ export default function Home() {
             </div>
           </div>
           <Slider {...settings2}>
+            {/* <div className="testimonial">
+              <Image src={test1} alt="testimonial" />
+            </div> */}
             <div className="testimonial">
-              <Image src={test1} height="305" width="340" alt="testimonial" />
+              <Image src={test2} alt="testimonial" />
             </div>
             <div className="testimonial">
-              <Image src={test2} height="305" width="340" alt="testimonial" />
+              <Image src={test3} alt="testimonial" />
             </div>
             <div className="testimonial">
-              <Image src={test3} height="305" width="340" alt="testimonial" />
+              <Image src={test4} alt="testimonial" />
             </div>
-            <div className="testimonial">
-              <Image src={test4} height="305" width="340" alt="testimonial" />
-            </div>
-            <div className="testimonial">
-              <Image src={test5} height="305" width="340" alt="testimonial" />
-            </div>
+            {/* <div className="testimonial">
+              <Image src={test5} alt="testimonial" />
+            </div> */}
           </Slider>
         </section>
         <section className="section-sign-up">
@@ -430,6 +444,57 @@ export default function Home() {
           </div>
         </section>
       </Layout>
+      <Drawer
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction="right"
+        className="mobile-drawer"
+      >
+        <List>
+          <ListItem
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TrialButton
+              id={"free-trial"}
+              text={"Start Free Trial"}
+              route={"/free-trial"}
+            />
+          </ListItem>
+          <MenuItem
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              textAlign: "left",
+              marginLeft: '15%'
+            }}
+          >
+            <Link href={`/`}>Home</Link>
+          </MenuItem>
+          <MenuItem
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              textAlign: "left",
+              marginLeft: '15%'
+            }}
+          >
+            <Link href={`/methods`}>Methods</Link>
+          </MenuItem>
+          <MenuItem
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              textAlign: "left",
+              marginLeft: '15%'
+            }}
+          >
+            <Link href={`/workspace`}>Workspace</Link>
+          </MenuItem>
+        </List>
+      </Drawer>
     </>
   );
 }

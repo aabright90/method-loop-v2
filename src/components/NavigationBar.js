@@ -31,8 +31,10 @@ import AdbIcon from "@mui/icons-material/Adb";
 const pages = ["Home", "Methods", "Workspace"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function NavigationBar() {
+function NavigationBar({ global }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
+
+  console.log(global);
 
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -99,7 +101,7 @@ function NavigationBar() {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon />
+                <MenuIcon onClick={() => global.toggleDrawer()} />
               </IconButton>
             </Box>
             <Box

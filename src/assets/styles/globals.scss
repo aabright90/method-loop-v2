@@ -8,6 +8,7 @@
 
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "../../components/styles/mobile";
+@import 'react-modern-drawer/dist/index.css';
 
 
 body, a {
@@ -23,6 +24,10 @@ a {
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
+}
+
+.mobile-drawer {
+  background-color: $text-blue !important;
 }
 
 
