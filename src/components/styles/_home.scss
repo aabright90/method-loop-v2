@@ -13,6 +13,11 @@
     line-height: 190%;
     margin-bottom: 20px;
   }
+
+  .marquee-container {
+    padding-top: 1rem;
+  }
+
   .org-bottom {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -95,65 +100,66 @@
       line-height: 170%;
     }
   }
+ 
+  
+
+  .slick-slide {
+    display: grid;
+    place-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
 
   .step-box-wrapper {
     width: 100%;
-    .slick-list {
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-      padding-left: 3rem;
-      padding-right: 3rem;
+  }
+
+  .step-card,
+  .step-ill,
+  .step-heading,
+  .step-text {
+    margin-top: 2rem;
+  }
+
+  .step-card {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 6px 10px rgba(73, 79, 220, 0.15);
+    border-radius: 20px;
+    width: 260px !important;
+    height: 220px;
+    margin: 0;
+    position: relative;
+    .step-ill {
+      img {
+        position: absolute;
+        right: 20%;
+        top: -20%;
+      }
+    }
+    .step-heading {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      span {
+        padding: 4px;
+      }
+    }
+    .step-text {
+      margin-top: 1rem;
+      p {
+        font-size: 14px;
+      }
     }
   }
 
-  .slick-slider.slick-initialized {
-    padding-bottom: 0;
-    .step-card,
-    .step-ill,
-    .step-heading,
-    .step-text {
-      margin-top: 2rem;
-    }
-
-    .step-card {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      box-shadow: 0px 6px 10px rgba(73, 79, 220, 0.15);
-      border-radius: 20px;
-      max-width: 260px !important;
-      height: 220px;
-      position: relative;
-      .step-ill {
-        img {
-          position: absolute;
-          right: 20%;
-          top: -20%;
-        }
-      }
-      .step-heading {
-        margin-top: 3rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        span {
-          padding: 4px;
-        }
-      }
-      .step-text {
-        margin-top: 1rem;
-        p {
-          font-size: 14px;
-        }
-      }
-    }
-
-    .border-blue {
-      border: 1px solid $text-blue;
-    }
+  .border-blue {
+    border: 1px solid $text-blue;
   }
 }
 
@@ -293,9 +299,20 @@
   .testimonials {
     margin-top: 2rem;
     .testimonial {
-      max-width: 305px
+      max-width: 305px;
     }
-    
+  }
+
+  .banner {
+    margin-top: 3rem;
+    img {
+      width: 100vw;
+    }
+  }
+
+  .slick-slide {
+    display: grid;
+    place-content: center;
   }
 }
 
@@ -349,6 +366,12 @@
         gap: 4px;
         width: 120px !important;
         height: 50px !important;
+      }
+      .action-call.more-info {
+        background: #eff4fc !important;
+        color: #336cdb !important;
+        width: 120px !important;
+        margin-top: 4px;
       }
     }
 

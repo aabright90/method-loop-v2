@@ -39,7 +39,7 @@ const Header = ({ global }) => {
             },
           }}
         >
-          <Image src={group} />
+          <Image src={group} alt="group"/>
         </Box>
         <Box
           sx={{
@@ -55,7 +55,7 @@ const Header = ({ global }) => {
             alignItems: "center"
           }}
         >
-          <Image src={groupMobile} />
+          <Image src={groupMobile} alt="group-mobile" />
         </Box>
       </div>
     </section>

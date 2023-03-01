@@ -34,8 +34,6 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function NavigationBar({ global }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
-  console.log(global);
-
   const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -94,14 +92,14 @@ function NavigationBar({ global }) {
             >
               <LoginButton id={"login"} route={"/login"} />
               <IconButton
+                onClick={() => global.toggleDrawer()}
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon onClick={() => global.toggleDrawer()} />
+                <MenuIcon />
               </IconButton>
             </Box>
             <Box
@@ -133,4 +131,3 @@ function NavigationBar({ global }) {
   );
 }
 export default NavigationBar;
-

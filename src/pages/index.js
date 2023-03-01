@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import {
   ActionCall,
   TrialButton,
 } from "../components/buttons";
-import { List, ListItem, MenuItem } from "@mui/material";
+import { List, ListItem, MenuItem, Container } from "@mui/material";
 
 import Slider from "react-slick";
 import Drawer from "react-modern-drawer";
@@ -38,6 +38,8 @@ import workspace from "@/assets/vectors/illustrations/workspace.svg";
 import testimonials from "@/assets/icons/testimonials.svg";
 import testimonialsIll from "@/assets/vectors/illustrations/testimonials.svg";
 
+import testimonialBanner from "@/assets/vectors/illustrations/testimonial-banner.svg";
+
 import Marquee from "react-fast-marquee";
 
 import test1 from "@/assets/vectors/illustrations/test1.svg";
@@ -48,76 +50,48 @@ import test5 from "@/assets/vectors/illustrations/test5.svg";
 
 import facesDesktop from "@/assets/vectors/avatars/facesDesktop.svg";
 import facesMobile from "@/assets/vectors/avatars/facesMobile.svg";
+import { display } from "@mui/system";
 
 export default function Home() {
-  const [deskTopView, setDesktopView] = useState(false);
-  const [mobileView, setMobileView] = useState(false);
-  const [smallScreen, setSmallScreen] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  useEffect(() => {
-    const viewport = window.screen.width;
-    if (viewport <= 1180) {
-      setMobileView(true);
-      setDesktopView;
-      false;
-      setSmallScreen(false);
-    } else if (viewport <= 767) {
-      setMobileView(true);
-      setDesktopView(false);
-      setSmallScreen(true);
-    } else {
-      setDesktopView(true);
-      setMobileView(false);
-      setSmallScreen(false);
-    }
-  }, []);
-
   const global = {
-    deskTopView,
-    setDesktopView,
-    mobileView,
-    setMobileView,
     toggleDrawer,
     isOpen,
   };
 
-  const settings = {
-    className: "steps",
+  const settings1 = {
     dots: true,
     infinite: false,
     slidesToShow: 4,
     slidesToScroll: 0,
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 480,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          rows: 1,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           dots: true,
         },
       },
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 5,
-          rows: 1,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           dots: true,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 1100,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
-          rows: 1,
           dots: true,
         },
       },
@@ -125,11 +99,11 @@ export default function Home() {
   };
 
   const settings2 = {
-    className: "testimonials",
     dots: true,
     infinite: false,
     slidesToShow: 3,
     slidesToScroll: 0,
+    arrows: false,
     responsive: [
       {
         breakpoint: 480,
@@ -140,7 +114,23 @@ export default function Home() {
         },
       },
       {
+        breakpoint: 5,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1100,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -222,92 +212,89 @@ export default function Home() {
           <div className="text-header">
             <p>
               Accelerate your UX design process with hundreds <br />
-              of <strong>step-by-step method guides</strong>
-              and <strong>done-for-you templates:</strong>
+              of <strong>step-by-step method guides</strong> and{" "}
+              <strong>done-for-you templates:</strong>
             </p>
           </div>
-          <div className="step-box-wrapper">
-            <Slider {...settings}>
-              <div id="step-card" className="step-card">
-                <div className="step-ill">
-                  <Image src={learn} height="120" width="120" alt="learn" />
-                </div>
-                <div className="step-heading">
-                  <span>
-                    <Image src={one} height="20" width="20" alt="one" />
-                  </span>
-                  <span>
-                    <strong>Learn</strong>
-                  </span>
-                </div>
-                <div className="step-text">
-                  <p>
-                    Gain deeper insights into user <br /> and customer needs
-                  </p>
-                </div>
+          <Slider {...settings1}>
+            <div id="step-card" className="step-card">
+              <div className="step-ill">
+                <Image src={learn} height="120" width="120" alt="learn" />
               </div>
-              <div id="step-card" className="step-card border-blue">
-                <div className="step-ill">
-                  <Image src={define} height="120" width="120" alt="define" />
-                </div>
-                <div className="step-heading">
-                  <span>
-                    <Image src={two} height="20" width="20" alt="two" />
-                  </span>
-                  <span>
-                    <strong>Define</strong>
-                  </span>
-                </div>
-                <div className="step-text">
-                  <p>
-                    Transfer insights into actions <br /> and clear project
-                    plans
-                  </p>
-                </div>
+              <div className="step-heading">
+                <span>
+                  <Image src={one} height="20" width="20" alt="one" />
+                </span>
+                <span>
+                  <strong>Learn</strong>
+                </span>
               </div>
-              <div id="step-card" className="step-card">
-                <div className="step-ill">
-                  <Image
-                    src={establish}
-                    height="120"
-                    width="120"
-                    alt="establish"
-                  />
-                </div>
-                <div className="step-heading">
-                  <span>
-                    <Image src={three} height="20" width="20" alt="three" />
-                  </span>
-                  <span>
-                    <strong>Establish</strong>
-                  </span>
-                </div>
-                <div className="step-text">
-                  <p>
-                    Build concepts and prototypes <br /> stakeholders love
-                  </p>
-                </div>
+              <div className="step-text">
+                <p>
+                  Gain deeper insights into user <br /> and customer needs
+                </p>
               </div>
-              <div id="step-card" className="step-card border-blue">
-                <div className="step-ill">
-                  <Image src={deliver} height="120" width="120" alt="deliver" />
-                </div>
-                <div className="step-heading">
-                  <span>
-                    <Image src={four} height="20" width="20" alt="four" />
-                  </span>
-                  <span>
-                    <strong>Deliver</strong>
-                  </span>
-                </div>
-                <div className="step-text">
-                  <p>
-                    Bring it together to deliver <br /> great project outcomes
-                  </p>
-                </div>
+            </div>
+            <div id="step-card" className="step-card border-blue">
+              <div className="step-ill">
+                <Image src={define} height="120" width="120" alt="define" />
               </div>
-            </Slider>
-          </div>
+              <div className="step-heading">
+                <span>
+                  <Image src={two} height="20" width="20" alt="two" />
+                </span>
+                <span>
+                  <strong>Define</strong>
+                </span>
+              </div>
+              <div className="step-text">
+                <p>
+                  Transfer insights into actions <br /> and clear project plans
+                </p>
+              </div>
+            </div>
+            <div id="step-card" className="step-card">
+              <div className="step-ill">
+                <Image
+                  src={establish}
+                  height="120"
+                  width="120"
+                  alt="establish"
+                />
+              </div>
+              <div className="step-heading">
+                <span>
+                  <Image src={three} height="20" width="20" alt="three" />
+                </span>
+                <span>
+                  <strong>Establish</strong>
+                </span>
+              </div>
+              <div className="step-text">
+                <p>
+                  Build concepts and prototypes <br /> stakeholders love
+                </p>
+              </div>
+            </div>
+            <div id="step-card" className="step-card border-blue">
+              <div className="step-ill">
+                <Image src={deliver} height="120" width="120" alt="deliver" />
+              </div>
+              <div className="step-heading">
+                <span>
+                  <Image src={four} height="20" width="20" alt="four" />
+                </span>
+                <span>
+                  <strong>Deliver</strong>
+                </span>
+              </div>
+              <div className="step-text">
+                <p>
+                  Bring it together to deliver <br /> great project outcomes
+                </p>
+              </div>
+            </div>
+          </Slider>
         </section>
         <section className="section-elevate">
           <div className="elevate-action">
@@ -338,7 +325,7 @@ export default function Home() {
             </div>
           </div>
           <div className="elevate-ill">
-            <Image src={elevate} height="600" width="740" alt="elevate" />
+            <Image src={elevate} alt="elevate" />
           </div>
         </section>
         <section className="section-workspace">
@@ -389,23 +376,49 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Slider {...settings2}>
-            {/* <div className="testimonial">
-              <Image src={test1} alt="testimonial" />
-            </div> */}
-            <div className="testimonial">
-              <Image src={test2} alt="testimonial" />
-            </div>
-            <div className="testimonial">
-              <Image src={test3} alt="testimonial" />
-            </div>
-            <div className="testimonial">
-              <Image src={test4} alt="testimonial" />
-            </div>
-            {/* <div className="testimonial">
-              <Image src={test5} alt="testimonial" />
-            </div> */}
-          </Slider>
+          <Container
+            disableGutters
+            className="banner"
+            sx={{
+              display: {
+                xl: "block",
+                lg: "block",
+                md: "none",
+                sm: "none",
+                xs: "none",
+              },
+              width: "100%",
+              margin: 0,
+            }}
+          >
+            <Image src={testimonialBanner} alt="banner" />
+          </Container>
+
+          <Container
+            disableGutters
+            sx={{
+              display: {
+                xl: "none",
+                lg: "none",
+                md: "block",
+                sm: "block",
+                xs: "block",
+              },
+              width: "100%",
+            }}
+          >
+            <Slider {...settings2}>
+              <div className="testimonial">
+                <Image src={test2} alt="testimonial" />
+              </div>
+              <div className="testimonial">
+                <Image src={test3} alt="testimonial" />
+              </div>
+              <div className="testimonial">
+                <Image src={test4} alt="testimonial" />
+              </div>
+            </Slider>
+          </Container>
         </section>
         <section className="section-sign-up">
           <div className="hero">
@@ -468,7 +481,7 @@ export default function Home() {
               display: "flex",
               justifyContent: "flex-start",
               textAlign: "left",
-              marginLeft: '15%'
+              marginLeft: "15%",
             }}
           >
             <Link href={`/`}>Home</Link>
@@ -478,7 +491,7 @@ export default function Home() {
               display: "flex",
               justifyContent: "flex-start",
               textAlign: "left",
-              marginLeft: '15%'
+              marginLeft: "15%",
             }}
           >
             <Link href={`/methods`}>Methods</Link>
@@ -488,7 +501,7 @@ export default function Home() {
               display: "flex",
               justifyContent: "flex-start",
               textAlign: "left",
-              marginLeft: '15%'
+              marginLeft: "15%",
             }}
           >
             <Link href={`/workspace`}>Workspace</Link>
