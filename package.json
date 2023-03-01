@@ -30,6 +30,6 @@
     "styled-components": "^5.3.6"
   },
   "engines": {
-    "node": "16.19.0"
+    "node": "18.14.2"
   }
 }
