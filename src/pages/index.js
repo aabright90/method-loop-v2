@@ -369,8 +369,8 @@ export default function Home() {
             </div>
             <div className="text">
               <p>
-                Whether you're a junior designer or the head of a design
-                department, you're in good <br />
+                Whether you{"'"}re a junior designer or the head of a design
+                department, you{"'"}re in good <br />
                 company. Method Loop is used and loved by over 20% of Fortune
                 500 designers!
               </p>
@@ -431,7 +431,7 @@ export default function Home() {
             <div className="text">
               <p>
                 Register now and get access to remarkable methods, mini-guides
-                and templates. <br /> And the best part? It's FREE.
+                and templates. <br /> And the best part? It{"'"}s FREE.
                 Alternatively, see <strong>PRO</strong> and{" "}
                 <strong>DIRECTOR</strong> plans.
               </p>
