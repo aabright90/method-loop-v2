@@ -985,7 +985,7 @@
   }
 }
 
-@media (orientation: landscape) {
+@media (min-width: 300px) and (max-width: 767px) and (orientation: landscape) {
   .banner-bg,
   .header-grid {
     height: 100vh;
