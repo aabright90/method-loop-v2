@@ -120,7 +120,6 @@
       }
 
       #action-call {
-
       }
     }
 
@@ -576,6 +575,10 @@
     margin-left: 0% !important;
   }
 
+  // .banner-bg {
+  //   min-height: 100vh;
+  // }
+
   // hero
 
   .header-grid {
@@ -977,6 +980,30 @@
       margin-top: 1rem;
       img {
         width: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 767px) and (orientation: landscape) {
+  .banner-bg,
+  .header-grid {
+    height: 100vh;
+
+    .hero-left {
+      margin-top: 0%;
+      .hero-left-wrapper {
+        .hero-grabber {
+          h1 {
+            font-size: 36px;
+          }
+        }
+
+        .hero-text {
+          p {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
