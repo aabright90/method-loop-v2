@@ -1,0 +1,131 @@
+@media (min-width: 300px) and (max-width: 600px) {
+  .register-left {
+    .login-section-bottom {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
+.register-page {
+  width: 100vw;
+  display: flex;
+
+  .register-left {
+    .nav-wrapper {
+      .nav-register {
+        margin-top: 25px;
+        margin-left: 20px;
+        h4 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+    .action-box {
+      #action-call {
+        width: 300px !important;
+      }
+    }
+    .hr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      hr {
+        width: 21.5vw;
+        background-color: #12131a;
+        height: 1px;
+      }
+
+      p {
+        color: #12131a;
+        margin-bottom: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+        opacity: 0.4;
+      }
+    }
+
+    .login-section-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .sign-up-wrapper {
+      .text {
+        margin-bottom: 0;
+        margin-right: 8px;
+        opacity: 0.6;
+      }
+      #action-call {
+        width: 130px !important;
+        height: 46px;
+        background: transparent;
+        border: 1px solid #336cdb !important;
+        p {
+          color: #336cdb !important;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .register-right {
+    color: white !important;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+      width: 50%;
+      .vector-box {
+        img {
+          max-width: 202px;
+        }
+      }
+      .text-box {
+        margin-top: 50px;
+        .heading {
+          h1 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 130%;
+          }
+        }
+
+        .grabber {
+          margin-top: 15px;
+          p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 170%;
+          }
+        }
+
+        .list {
+          width: 135%;
+          margin-top: 30px;
+          ul {
+            padding-left: 0;
+            list-style: none;
+            li {
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 170%;
+            }
+          }
+        }
+
+        .close {
+          margin-top: 30px;
+          p {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 170%;
+          }
+        }
+      }
+    }
+  }
+}

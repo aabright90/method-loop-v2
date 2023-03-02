@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import loginIcon from "../../assets/icons/login.svg";
-import arrowRightIcon from "../../assets/icons/arrowRight.svg"
+import arrowRightIcon from "../../assets/icons/arrowRight.svg";
 
 export const LoginButton = ({ route, id }) => {
   return (
@@ -56,6 +56,20 @@ export const ActionCall = ({ text, route, className = "" }) => {
           <p className="button-text">{text}</p>
         </button>
       </Link>
+    </>
+  );
+};
+
+export const ActionButton = ({ text, onClick, className = "" }) => {
+  return (
+    <>
+      <button
+        onClick={onClick}
+        id="action-call"
+        className={`action-call ${className}`}
+      >
+        <p className="button-text">{text}</p>
+      </button>
     </>
   );
 };
