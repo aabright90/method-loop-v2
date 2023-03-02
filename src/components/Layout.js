@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
         <div className="app-container">{children}</div>
         <Footer />
       </Container>
+      <div className="banner-footer"></div>
     </>
   );
 };

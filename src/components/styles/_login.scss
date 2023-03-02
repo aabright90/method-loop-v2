@@ -1,0 +1,124 @@
+@media (min-width: 300px) and (max-width: 600px) {
+  .login-page {
+    .login-section-bottom {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
+.login-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  .heading {
+    width: 92px;
+    height: 47px;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    color: #12131a;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .login-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    h5 {
+      margin-top: 50px;
+      margin-left: 50px;
+      font-weight: bold;
+    }
+
+    .login-section-top {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .password-reset {
+    p {
+        font-size: 12px;
+      a {
+        color: #336cdb !important;
+        text-decoration: underline;
+        cursor: pointer !important;
+      }
+    }
+  }
+
+  .hr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    hr {
+      width: 21.5vw;
+      background-color: #12131a;
+      height: 1px;
+    }
+
+    p {
+      color: #12131a;
+      margin-bottom: 2px;
+      padding-left: 4px;
+      padding-right: 4px;
+      opacity: 0.4;
+    }
+  }
+
+  .login-section-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  #action-call {
+    width: 300px !important;
+  }
+
+  .login-signup,
+  .login-header {
+    #action-call {
+      width: 130px !important;
+      height: 46px;
+      background: transparent;
+      border: 1px solid #336cdb !important;
+      p {
+        color: #336cdb !important;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .sign-up-wrapper {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    .text {
+      margin-bottom: 0;
+      margin-right: 8px;
+      opacity: 0.6;
+    }
+  }
+
+  .login-header {
+    #action-call {
+      margin-right: 12px;
+    }
+  }
+}

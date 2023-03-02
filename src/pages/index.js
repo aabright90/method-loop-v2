@@ -354,7 +354,7 @@ export default function Home() {
                   all from the one place.
                 </p>
               </div>
-              <ActionCall text={"Start Free Trial"} route={"/free-trial"} />
+              <ActionCall text={"Start Free Trial"} route={"/login"} />
             </div>
           </div>
         </section>

@@ -57,6 +57,7 @@ function NavigationBar({ global }) {
         sx={{
           backgroundColor: "transparent",
           boxShadow: "none",
+          marginTop: "8px",
         }}
         position="static"
       >
@@ -121,7 +122,7 @@ function NavigationBar({ global }) {
               <TrialButton
                 id={"free-trial"}
                 text={"Start Free Trial"}
-                route={"/free-trial"}
+                route={"/login"}
               />
             </Box>
           </Toolbar>

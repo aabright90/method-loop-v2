@@ -16,6 +16,7 @@
 
   .marquee-container {
     padding-top: 1rem;
+    overflow: hidden;
   }
 
   .org-bottom {
@@ -305,9 +306,9 @@
 
   .banner {
     margin-top: 3rem;
-    img {
-      width: 100vw;
-    }
+    // img {
+    //   width: 100vw;
+    // }
   }
 
   .slick-slide {
@@ -371,7 +372,7 @@
         background: #eff4fc !important;
         color: #336cdb !important;
         width: 120px !important;
-        margin-top: 4px;
+        // margin-top: 4px;
       }
     }
 
