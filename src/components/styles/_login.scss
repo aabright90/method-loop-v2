@@ -1,9 +1,21 @@
 @media (min-width: 300px) and (max-width: 600px) {
   .login-page {
-    .login-section-bottom {
-      grid-template-columns: 1fr !important;
+    .login-header {
+      #action-call {
+        width: 110px !important !important;
+        height: 40px !important !important;
+      }
+
+      .login-section-bottom {
+        grid-template-columns: 1fr !important;
+      }
     }
   }
+}
+
+#action-call {
+  width: 110px !important !important;
+  height: 40px !important !important;
 }
 
 .login-page {
@@ -34,6 +46,9 @@
     top: 0;
     left: 0;
     right: 0;
+    a {
+      color: black !important;
+    }
     h5 {
       margin-top: 50px;
       margin-left: 50px;
@@ -50,7 +65,7 @@
 
   .password-reset {
     p {
-        font-size: 12px;
+      font-size: 12px;
       a {
         color: #336cdb !important;
         text-decoration: underline;
@@ -85,10 +100,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-  }
-
-  #action-call {
-    width: 300px !important;
   }
 
   .login-signup,

@@ -21,7 +21,7 @@ import Link from "next/link";
 const Login = () => {
   const handleLogin = () => {};
 
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
 
   return (
     <div className="login-page">
@@ -37,7 +37,9 @@ const Login = () => {
             },
           }}
         >
-          <h5>methodloop</h5>
+          <Link href={"/"}>
+            <h5>methodloop</h5>
+          </Link>
         </Box>
         <Box
           sx={{
@@ -76,7 +78,7 @@ const Login = () => {
               sm: "270px",
               xs: "270px",
             },
-            maxWidth: "550px"
+            maxWidth: "550px",
           }}
           noValidate
           autoComplete="off"
@@ -148,7 +150,7 @@ const Login = () => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="start">
-                      <Image src={eye} alt="eye"/>
+                      <Image src={eye} alt="eye" />
                     </InputAdornment>
                   ),
                 }}
@@ -180,8 +182,6 @@ const Login = () => {
       <section className="login-section-bottom">
         <Image src={google} alt="Google" />
         <Image src={facebook} alt="facebook" />
-        <Image src={linkedin} alt="linkedin" />
-        <Image src={twitter} alt="twitter" />
       </section>
       <section className="login-signup">
         <Box
