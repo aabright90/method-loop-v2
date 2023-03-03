@@ -29,7 +29,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { width } from "@mui/system";
 
-const register = () => {
+const Register = () => {
   const handleClick = () => {};
 
   const [error, setError] = useState(false);
@@ -487,4 +487,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;
