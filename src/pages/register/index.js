@@ -9,6 +9,11 @@ import {
   Typography,
   Container,
 } from "@mui/material";
+
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+
 import { ActionButton, ActionCall } from "@/components/buttons";
 import google from "../../assets/icons/googleButton.svg";
 import facebook from "../../assets/icons/fbButton.svg";
@@ -17,6 +22,9 @@ import twitter from "../../assets/icons/twitterButton.svg";
 import launch from "../../assets/vectors/illustrations/launch.svg";
 import check from "../../assets/icons/check.svg";
 
+import arrowUp from "../../assets/icons/arrowUp.svg";
+import arrowDown from "../../assets/icons/arrowDown.svg";
+
 import Image from "next/image";
 import Link from "next/link";
 import { width } from "@mui/system";
@@ -24,7 +32,12 @@ import { width } from "@mui/system";
 const register = () => {
   const handleClick = () => {};
 
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <Box
@@ -33,7 +46,6 @@ const register = () => {
       sx={{
         display: "flex",
         width: "100vw",
-        height: "100vh",
         position: "relative",
       }}
     >
@@ -49,6 +61,23 @@ const register = () => {
           sx={{
             position: "absolute",
             display: {
+              xl: "none",
+              lg: "none",
+              md: "flex",
+              sm: "flex",
+              xs: "flex",
+            },
+            justifyContent: "flex-end",
+            width: "100%",
+          }}
+        >
+          <ActionCall text={"Login"} route={"/login"} />
+        </Box>
+        <Box
+          className="nav-wrapper"
+          sx={{
+            position: "absolute",
+            display: {
               xl: "flex",
               lg: "flex",
               md: "none",
@@ -58,22 +87,132 @@ const register = () => {
           }}
         >
           <nav className="nav-register">
-            <h4>methodloop</h4>
+            <Link href={"/"}>
+              <h4>methodloop</h4>
+            </Link>
           </nav>
         </Box>
+
         <Box
           className="form-box"
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            flexDirection: "column",
             width: "100%",
+            marginTop: {
+              xs: "8rem",
+              sm: "8rem",
+            },
           }}
         >
           <Box
+            className="accordion-box"
+            sx={{
+              display: {
+                xl: "none",
+                lg: "none",
+                md: "flex",
+                sm: "flex",
+                xs: "flex",
+              },
+              width: "75vw",
+              marginBottom: "2rem",
+            }}
+          >
+            <div>
+              <Accordion
+                expanded={expanded === "panel1"}
+                onChange={handleChange("panel1")}
+                sx={{
+                  width: "75vw",
+                  background: "linear-gradient(#205DD3, #0F44AC)",
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<Image src={arrowDown} alt="arrow_down" />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      width: "100%",
+                      color: "white",
+                      flexShrink: 0,
+                      fontWeight: "700",
+                      fontSize: "20px",
+                      lineHeight: "34px",
+                    }}
+                  >
+                    Accelerate Your UX Design Process
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box
+                    className="wrapper"
+                    sx={{
+                      width: "100%",
+                      display: {
+                        md: "grid",
+                      },
+                      gridTemplateColumns: {
+                        md: "1fr 1fr",
+                        sm: "1fr 1fr",
+                        xs: "1fr",
+                      },
+                    }}
+                  >
+                    <div className="text-box">
+                      <div className="grabber">
+                        <p>
+                          Create an account to get access to <br />{" "}
+                          comprehensive library of:
+                        </p>
+                      </div>
+                      <div className="list">
+                        <ul>
+                          <li>
+                            <Image src={check} alt="check" />
+                            Streamlined workspace for your projects
+                          </li>
+                          <li>
+                            <Image src={check} alt="check" />
+                            Tested and proven method mini-guides
+                          </li>
+                          <li>
+                            <li>
+                              <Image src={check} alt="check" />
+                              Fantastic done-for-you templates
+                            </li>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="close">
+                        <p>And so much more!</p>
+                      </div>
+                    </div>
+                    <Box
+                      sx={{
+                        display: {
+                          md: "grid",
+                          sm: "none",
+                          xs: "none",
+                        },
+                        placeContent: "center",
+                      }}
+                    >
+                      <Image src={launch} alt="launch" />
+                    </Box>
+                  </Box>
+                </AccordionDetails>
+              </Accordion>
+            </div>
+          </Box>
+          <Box
             className="register-wrapper"
             sx={{
-              marginTop: "3.5rem",
               maxWidth: "560px",
               width: "75vw",
             }}
@@ -120,9 +259,15 @@ const register = () => {
               </FormControl>
               <Box
                 sx={{
-                  display: "flex",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "20px",
+                  display: "grid",
+                  gridTemplateColumns: {
+                    xl: "1fr 1fr",
+                    lg: "1fr 1fr",
+                    md: "1fr",
+                    sm: "1fr",
+                    xs: "1fr",
+                  },
+                  columnGap: "20px",
                   marginTop: {
                     xl: "1.5rem",
                     lg: "1.5rem",
@@ -212,6 +357,22 @@ const register = () => {
                     variant="outlined"
                   />
                 </FormControl>
+                <Box
+                  className="have-account"
+                  sx={{
+                    display: {
+                      xs: "block",
+                      sm: "none",
+                      md: "none",
+                      lg: "none",
+                      xl: "none",
+                    },
+                  }}
+                >
+                  <p>
+                    Already have an account? <Link href={"/login"}>Log in</Link>
+                  </p>
+                </Box>
               </Box>
               <Box
                 className="action-box"
@@ -220,6 +381,9 @@ const register = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   marginTop: {
+                    xs: "1.5rem",
+                    sm: "1.5rem",
+                    md: "1.5rem",
                     xl: "1.5rem",
                     lg: "1.5rem",
                   },
@@ -246,7 +410,7 @@ const register = () => {
                 display: {
                   xs: "none",
                   sm: "none",
-                  md: "flex",
+                  md: "none",
                   lg: "flex",
                   xl: "flex",
                 },
@@ -281,7 +445,7 @@ const register = () => {
           }}
         >
           <div className="vector-box">
-            <Image src={launch} />
+            <Image src={launch} alt="launch" />
           </div>
           <div className="text-box">
             <div className="heading">
@@ -298,16 +462,16 @@ const register = () => {
             <div className="list">
               <ul>
                 <li>
-                  <Image src={check} />
+                  <Image src={check} alt="check" />
                   Streamlined workspace for your projects
                 </li>
                 <li>
-                  <Image src={check} />
+                  <Image src={check} alt="check" />
                   Tested and proven method mini-guides
                 </li>
                 <li>
                   <li>
-                    <Image src={check} />
+                    <Image src={check} alt="check" />
                     Fantastic done-for-you templates
                   </li>
                 </li>

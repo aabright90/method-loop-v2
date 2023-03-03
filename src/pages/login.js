@@ -148,7 +148,7 @@ const login = () => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="start">
-                      <Image src={eye} />
+                      <Image src={eye} alt="eye"/>
                     </InputAdornment>
                   ),
                 }}
