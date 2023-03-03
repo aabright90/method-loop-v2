@@ -3,16 +3,36 @@
     .login-section-bottom {
       grid-template-columns: 1fr !important;
     }
+
+    .form-box {
+      .accordion-box {
+        .wrapper {
+          .text-box {
+            .list {
+              ul {
+                li {
+                  font-size: 12px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 .register-page {
   width: 100vw;
   display: flex;
+  overflow: scroll;
 
   .register-left {
     .nav-wrapper {
       .nav-register {
+        a {
+          color: black !important;
+        }
         margin-top: 25px;
         margin-left: 20px;
         h4 {
@@ -21,6 +41,72 @@
         }
       }
     }
+
+    .have-account {
+      p {
+        font-size: 12px;
+        a {
+          color: #336cdb !important;
+          text-decoration: underline;
+          cursor: pointer !important;
+        }
+      }
+    }
+
+    .form-box {
+      .accordion-box {
+        .wrapper {
+          .text-box {
+            .grabber {
+              p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 170%;
+                color: white;
+              }
+            }
+
+            .list {
+              ul {
+                list-style: none;
+                padding: 0;
+                li {
+                  font-weight: 500;
+                  font-size: 14px;
+                  line-height: 170%;
+                  color: white;
+                }
+              }
+            }
+
+            .close {
+              p {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 170%;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav-wrapper {
+      #action-call {
+        margin-top: 26px;
+        margin-right: 37px;
+        width: 110px !important;
+        height: 40px;
+        background: transparent;
+        border: 1px solid #336cdb !important;
+        p {
+          color: #336cdb !important;
+          font-size: 12px;
+        }
+      }
+    }
+
     .action-box {
       #action-call {
         width: 300px !important;
@@ -52,6 +138,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
+      img {
+        display: grid;
+        place-content: center;
+        width: 100%;
+      }
     }
 
     .sign-up-wrapper {

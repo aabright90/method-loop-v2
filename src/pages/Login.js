@@ -18,7 +18,7 @@ import eye from "../assets/icons/eye.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const login = () => {
+const Login = () => {
   const handleLogin = () => {};
 
   const [error, setError] = useState(false)
@@ -148,7 +148,7 @@ const login = () => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="start">
-                      <Image src={eye} />
+                      <Image src={eye} alt="eye"/>
                     </InputAdornment>
                   ),
                 }}
@@ -207,4 +207,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
