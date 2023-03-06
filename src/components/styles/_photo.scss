@@ -1,0 +1,354 @@
+.photo-page {
+  position: relative;
+  .nav-wrapper {
+    position: absolute;
+    .nav-register {
+      a {
+        color: black;
+      }
+      margin-top: 50px;
+      margin-left: 50px;
+      h4 {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+
+  .photo-page-container {
+  }
+
+  .photo-page-box {
+    .heading {
+    }
+
+    .sub-heading {
+    }
+
+    .upload-box {
+      border: 1px solid #e3e7ee;
+      border-radius: 20px;
+      padding: 35px 40px;
+      max-width: 560px;
+      min-width: 360px;
+      height: 200px;
+      gap: 50px;
+      .photo {
+        .profile-wrapper {
+          img {
+            border-radius: 20px;
+          }
+        }
+      }
+
+      .input {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+
+        img {
+          margin-right: 4px;
+        }
+
+        p {
+          margin: 0;
+          font-size: 16px;
+        }
+
+        .light {
+          color: #12131a;
+          opacity: 0.4;
+        }
+
+        .drop-button {
+          display: grid;
+          place-content: center;
+          p {
+            min-width: 111px;
+          }
+        }
+
+        .drop-text {
+          display: grid;
+          place-content: center;
+          p {
+            min-width: 135px;
+          }
+        }
+
+        .file-text {
+          display: grid;
+          place-content: center;
+          grid-row: 2;
+          grid-column: 1 / 3;
+          font-size: 14px;
+          color: #00000096;
+        }
+      }
+    }
+
+    .button-box {
+      .top {
+        display: flex;
+        justify-content: center;
+      }
+
+      .bottom {
+        margin-top: 1rem;
+        text-align: center;
+        text-decoration: underline;
+        opacity: 0.4;
+        a {
+          color: #12131a;
+        }
+      }
+    }
+  }
+
+  .drag-drop-wrapper {
+    label {
+      height: 100%;
+      border: none;
+      max-width: unset;
+      svg {
+        display: none;
+      }
+
+      .sc-dkrFOg.dmajdp {
+        display: none;
+      }
+
+      .sc-bcXHqe.hjYtIJ {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+  .photo-page {
+    .nav-wrapper {
+      .nav-register {
+        a {
+          color: black;
+        }
+
+        h4 {
+        }
+      }
+    }
+
+    .photo-page-container {
+    }
+
+    .photo-page-box {
+      width: 50vw;
+      .heading {
+      }
+
+      .sub-heading {
+      }
+
+      .upload-box {
+        gap: 25px;
+        .photo {
+          .profile-wrapper {
+          }
+        }
+
+        .input {
+          flex-direction: row;
+          justify-content: center;
+
+          img {
+          }
+
+          p {
+          }
+
+          .light {
+          }
+
+          .drop-button {
+            p {
+            }
+          }
+
+          .drop-text {
+            p {
+              min-width: 118px;
+            }
+          }
+        }
+      }
+
+      .button-box {
+        .top {
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+  .photo-page {
+    .nav-wrapper {
+      .nav-register {
+        a {
+          color: black;
+        }
+
+        h4 {
+        }
+      }
+    }
+
+    .photo-page-container {
+    }
+
+    .photo-page-box {
+      .heading {
+      }
+
+      .sub-heading {
+      }
+
+      .upload-box {
+        gap: 12.5px;
+        height: 260px;
+        .photo {
+          .profile-wrapper {
+          }
+        }
+
+        .input {
+          grid-template-columns: 1fr;
+
+          img {
+          }
+
+          p {
+          }
+
+          .light {
+          }
+
+          .drop-button {
+            p {
+            }
+          }
+
+          .drop-text {
+            display: none;
+            p {
+            }
+          }
+        }
+      }
+
+      .button-box {
+        .top {
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .photo-page {
+    .nav-wrapper {
+      .nav-register {
+        a {
+          color: black;
+        }
+
+        h4 {
+        }
+      }
+    }
+
+    .photo-page-container {
+      margin-top: 126px;
+      height: unset;
+    }
+
+    .photo-page-box {
+      width: 75vw;
+      .heading {
+        margin-bottom: 1rem;
+        h1 {
+          font-size: 28px;
+          font-weight: 700;
+        }
+      }
+
+      .sub-heading {
+        display: none;
+      }
+
+      .upload-box {
+        gap: 12.5px;
+        height: 240px;
+        min-width: 260px;
+        .photo {
+          .profile-wrapper {
+          }
+        }
+
+        .input {
+          grid-template-columns: 1fr;
+          img {
+          }
+
+          p {
+          }
+
+          .light {
+          }
+
+          .drop-button {
+            p {
+            }
+          }
+
+          .drop-text {
+            display: none;
+            p {
+            }
+          }
+        }
+      }
+
+      .button-box {
+        .top,
+        .bottom {
+          width: 75vw;
+        }
+      }
+    }
+  }
+
+  .brand-box {
+    width: 100%;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 3px solid #0000002e;
+    .heading {
+      text-align: center;
+      p {
+        color: #12131a;
+        opacity: 0.7;
+      }
+    }
+
+    .brands {
+      .brand-wrapper {
+        display: grid;
+        place-content: center;
+        img {
+          width: 75px;
+        }
+      }
+    }
+  }
+}

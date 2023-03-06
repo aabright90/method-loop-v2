@@ -27,10 +27,18 @@ import arrowDown from "../../assets/icons/arrowDown.svg";
 
 import Image from "next/image";
 import Link from "next/link";
+
+import { useRouter } from "next/navigation";
+
 import { width } from "@mui/system";
 
 const Register = () => {
-  const handleClick = () => {};
+
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push("/register/photo");
+  };
 
   const [error, setError] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -113,102 +121,103 @@ const Register = () => {
               display: {
                 xl: "none",
                 lg: "none",
-                md: "flex",
-                sm: "flex",
-                xs: "flex",
+                md: "grid",
+                sm: "grid",
+                xs: "grid",
               },
-              width: "75vw",
+              width: "100%",
               marginBottom: "2rem",
+              maxWidth: "560px",
+              placeContent: "center",
             }}
           >
-            <div>
-              <Accordion
-                expanded={expanded === "panel1"}
-                onChange={handleChange("panel1")}
-                sx={{
-                  width: "75vw",
-                  background: "linear-gradient(#205DD3, #0F44AC)",
-                }}
+            <Accordion
+              expanded={expanded === "panel1"}
+              onChange={handleChange("panel1")}
+              sx={{
+                background: "linear-gradient(#205DD3, #0F44AC)",
+                width: "75vw",
+                maxWidth: "560px",
+              }}
+            >
+              <AccordionSummary
+                expandIcon={<Image src={arrowDown} alt="arrow_down" />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
               >
-                <AccordionSummary
-                  expandIcon={<Image src={arrowDown} alt="arrow_down" />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
+                <Typography
+                  variant="h6"
+                  sx={{
+                    width: "100%",
+                    color: "white",
+                    flexShrink: 0,
+                    fontWeight: "700",
+                    fontSize: "20px",
+                    lineHeight: "34px",
+                  }}
                 >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      width: "100%",
-                      color: "white",
-                      flexShrink: 0,
-                      fontWeight: "700",
-                      fontSize: "20px",
-                      lineHeight: "34px",
-                    }}
-                  >
-                    Accelerate Your UX Design Process
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
+                  Accelerate Your UX Design Process
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Box
+                  className="wrapper"
+                  sx={{
+                    width: "100%",
+                    display: {
+                      md: "grid",
+                    },
+                    gridTemplateColumns: {
+                      md: "1fr 1fr",
+                      sm: "1fr 1fr",
+                      xs: "1fr",
+                    },
+                  }}
+                >
+                  <div className="text-box">
+                    <div className="grabber">
+                      <p>
+                        Create an account to get access to <br /> comprehensive
+                        library of:
+                      </p>
+                    </div>
+                    <div className="list">
+                      <ul>
+                        <li>
+                          <Image src={check} alt="check" />
+                          Streamlined workspace for your projects
+                        </li>
+                        <li>
+                          <Image src={check} alt="check" />
+                          Tested and proven method mini-guides
+                        </li>
+                        <li>
+                          <li>
+                            <Image src={check} alt="check" />
+                            Fantastic done-for-you templates
+                          </li>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="close">
+                      <p>And so much more!</p>
+                    </div>
+                  </div>
                   <Box
-                    className="wrapper"
                     sx={{
-                      width: "100%",
                       display: {
                         md: "grid",
+                        sm: "none",
+                        xs: "none",
                       },
-                      gridTemplateColumns: {
-                        md: "1fr 1fr",
-                        sm: "1fr 1fr",
-                        xs: "1fr",
-                      },
+                      placeContent: "center",
                     }}
                   >
-                    <div className="text-box">
-                      <div className="grabber">
-                        <p>
-                          Create an account to get access to <br />{" "}
-                          comprehensive library of:
-                        </p>
-                      </div>
-                      <div className="list">
-                        <ul>
-                          <li>
-                            <Image src={check} alt="check" />
-                            Streamlined workspace for your projects
-                          </li>
-                          <li>
-                            <Image src={check} alt="check" />
-                            Tested and proven method mini-guides
-                          </li>
-                          <li>
-                            <li>
-                              <Image src={check} alt="check" />
-                              Fantastic done-for-you templates
-                            </li>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="close">
-                        <p>And so much more!</p>
-                      </div>
-                    </div>
-                    <Box
-                      sx={{
-                        display: {
-                          md: "grid",
-                          sm: "none",
-                          xs: "none",
-                        },
-                        placeContent: "center",
-                      }}
-                    >
-                      <Image src={launch} alt="launch" />
-                    </Box>
+                    <Image src={launch} alt="launch" />
                   </Box>
-                </AccordionDetails>
-              </Accordion>
-            </div>
+                </Box>
+              </AccordionDetails>
+            </Accordion>
           </Box>
           <Box
             className="register-wrapper"
@@ -399,8 +408,6 @@ const Register = () => {
               <Box className="login-section-bottom">
                 <Image src={google} alt="Google" />
                 <Image src={facebook} alt="facebook" />
-                <Image src={linkedin} alt="linkedin" />
-                <Image src={twitter} alt="twitter" />
               </Box>
             </Box>
             <Box

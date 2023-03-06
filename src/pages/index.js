@@ -354,7 +354,9 @@ export default function Home() {
                   all from the one place.
                 </p>
               </div>
-              <ActionCall text={"Start Free Trial"} route={"/login"} />
+              <div className="action-box" style={{ display: 'flex' }} >
+                <ActionCall text={"Start Free Trial"} route={"/register"} />
+              </div>
             </div>
           </div>
         </section>
@@ -451,7 +453,7 @@ export default function Home() {
           </div>
           <div className="sign-up-ills">
             <Image
-              src={global.deskTopView ? facesDesktop : facesMobile}
+              src={facesDesktop}
               alt="avatar"
             />
           </div>
