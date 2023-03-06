@@ -110,12 +110,16 @@
       height: 100%;
       border: none;
       max-width: unset;
+      opacity: 0;
+      input {
+    
+      }
+
       svg {
         display: none;
       }
 
-      .sc-dkrFOg.dmajdp,
-      .dWLNfR {
+      .sc-dkrFOg.dmajdp {
         display: none;
       }
 
