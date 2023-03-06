@@ -106,13 +106,12 @@
   }
 
   .drag-drop-wrapper {
+    opacity: 0;
     label {
       height: 100%;
       border: none;
       max-width: unset;
-      opacity: 0;
       input {
-    
       }
 
       svg {
