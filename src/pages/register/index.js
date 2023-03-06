@@ -27,10 +27,18 @@ import arrowDown from "../../assets/icons/arrowDown.svg";
 
 import Image from "next/image";
 import Link from "next/link";
+
+import { useRouter } from "next/navigation";
+
 import { width } from "@mui/system";
 
 const Register = () => {
-  const handleClick = () => {};
+
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push("/register/photo");
+  };
 
   const [error, setError] = useState(false);
   const [expanded, setExpanded] = useState(false);

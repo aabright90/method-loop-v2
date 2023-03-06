@@ -48,23 +48,12 @@ const Photo = () => {
       return;
     }
 
-    console.log('====================================');
-    console.log(file);
-    console.log('====================================');
-
     const objectUrl = window.URL.createObjectURL(file)
     
     setFilePreview(objectUrl);
 
   },[file])
-
-
-  console.log('====================================');
-  console.log(filePreview);
-  console.log('====================================');
-
   
-
   return (
     <Box
       className="photo-page"
@@ -176,8 +165,8 @@ const Photo = () => {
                   <Image
                     src={filePreview ? filePreview : profile}
                     alt="profile"
-                    width={'130'}
-                    height={'130'}
+                    width={"130"}
+                    height={"130"}
                   />
                 </Box>
               </Box>
@@ -224,7 +213,7 @@ const Photo = () => {
               />
             </div>
             <div className="bottom">
-              <Link href="/">Skip</Link>
+              <Link href="/register/interests">Skip</Link>
             </div>
           </Box>
         </Box>
@@ -244,7 +233,7 @@ const Photo = () => {
         >
           <div className="heading">
             <p>
-              Trusted by different organisations <br /> worldwide
+              Trusted by different organizations <br /> worldwide
             </p>
           </div>
 
