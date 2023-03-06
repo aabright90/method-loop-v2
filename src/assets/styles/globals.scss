@@ -7,6 +7,7 @@
 @import "../../components/styles/home";
 @import "../../components/styles/login";
 @import "../../components/styles/register";
+@import "../../components/styles/photo";
 
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "../../components/styles/mobile";
@@ -18,11 +19,6 @@
 
 body, a {
   font-family: "DM Sans", sans-serif !important;
-}
-
-a {
-  cursor: pointer !important;
-  color: white !important;
 }
 
 #__next {
